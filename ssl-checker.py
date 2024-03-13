@@ -43,12 +43,12 @@ def check_ssl_expiry(domain, cacert_path):
 
             return days_left, formatted_expiry_date, issuer_organization
         else:
-            return "Expiry date not found in certificate", issuer_organization
+            return "Expiry date not found in certificate"
 
     except ssl.SSLError as e:
-        return "SSL error: {}".format(e), issuer_organization
+        return "SSL error: {}".format(e)
     except socket.gaierror as e:
-        return "Socket gaierror: {}".format(e), issuer_organization
+        return "Socket gaierror: {}".format(e)
 
 # Example usage:
 domain = 'example.com'
